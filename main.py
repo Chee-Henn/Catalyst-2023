@@ -71,13 +71,14 @@ def get_transactions(address):
         balance_times.append(time)
     
     fig = px.line(x=balance_times,y =balances,labels={'x':'time', 'y':'balance'})
-    fig.write_image("plot.png")
-    
+    fig_plot = "line_plot.html"
+    fig.write_html(fig_plot)
+    print(current_balance)  
     
     
 address = "0x3a53B398294B6378281D3Db712eB1d0E406296b4" #burner 
 #address = "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC" #example by etherscan
 
 account_balance = get_account_balance(address)
+print("account_balance :", account_balance)
 get_transactions(address)
-
