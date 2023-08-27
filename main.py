@@ -71,9 +71,8 @@ def get_transactions(address):
         balance_times.append(time)
     
     fig = px.line(x=balance_times,y =balances,labels={'x':'time', 'y':'balance'})
-    fig.show()
+    fig.write_image("plot.png")
     
-    print(current_balance)  
     
     
 address = "0x3a53B398294B6378281D3Db712eB1d0E406296b4" #burner 
